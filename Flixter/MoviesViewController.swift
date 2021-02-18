@@ -68,13 +68,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Find the selected movie
         let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: cell)! //index of cell in the tableview
-        let movie = movies[indexPath.row]
+        let indexPath = tableView.indexPath(for: cell) //index of cell in the tableview
+        let movie = movies[indexPath!.row]
         print("Loading up the details screen")
         
         let detailsViewController = segue.destination as! MovieDetailsViewController
         detailsViewController.movie = movie
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath!, animated: true)
     }
     
 
